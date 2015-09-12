@@ -26,17 +26,8 @@ namespace ccbatest
             }
         }
 
-        CcbaService.CcbaServiceClient server;
-
-        //问题1，这里是不是没有释放，导致内存不断增大？
         private CcbaService.CcbaServiceClient GetService()
         {
-            //if (server == null)
-            //{
-            //    server = new CcbaService.CcbaServiceClient();
-            //}
-            //return server;
-
             return new CcbaService.CcbaServiceClient(); 
         }
 
@@ -117,6 +108,11 @@ namespace ccbatest
                 default:
                     break;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
